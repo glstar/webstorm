@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e3e7c52-3327-4ec6-9472-d60de0d912ed" name="!changes.default.changelist.name!" comment="" />
+    <list default="true" id="4e3e7c52-3327-4ec6-9472-d60de0d912ed" name="!changes.default.changelist.name!" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <list id="1ca194d4-5c14-4eb3-8a36-f49b14b23dda" name="11111" comment="11111" />
     <ignored path="webstorm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/public_html/bootstrap/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.33687943" vertical-offset="0" max-vertical-offset="564">
-              <caret line="10" column="88" selection-start-line="10" selection-start-column="88" selection-end-line="10" selection-end-column="88" />
+              <caret line="10" column="79" selection-start-line="10" selection-start-column="79" selection-end-line="10" selection-end-column="79" />
               <folding />
             </state>
           </provider>
@@ -226,7 +228,11 @@
       <created>1461932687962</created>
       <updated>1461932687962</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="change index.html&#10;">
+      <created>1461934571624</created>
+      <updated>1461934571624</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -335,7 +341,7 @@
     <entry file="file://$PROJECT_DIR$/public_html/bootstrap/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33687943" vertical-offset="0" max-vertical-offset="564">
-          <caret line="10" column="88" selection-start-line="10" selection-start-column="88" selection-end-line="10" selection-end-column="88" />
+          <caret line="10" column="79" selection-start-line="10" selection-start-column="79" selection-end-line="10" selection-end-column="79" />
           <folding />
         </state>
       </provider>
