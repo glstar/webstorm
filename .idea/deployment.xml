@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="sgittest" uploadOnCheckin="b2b3b53d-650a-43ad-a3cf-9bbb69faea02">
+    <serverData>
+      <paths name="sgittest">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myUploadOnCheckinName" value="sgittest" />
+  </component>
+</project>
+
