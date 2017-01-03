@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>下拉菜单</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+</head>
+
+
+<body>
+
+<div class="container">
+<nav class="navbar navbar-default" role="navigation">
+   <div class="container-fluid">
+   <div class="navbar-header">
+      <a class="navbar-brand" href="#">自强学堂</a>
+   </div>
+
+   <div id="myexample">
+      <ul class="nav navbar-nav">
+         <li class="active"><a href="#">iOS</a></li>
+         <li><a href="#">SVN</a></li>
+         <li class="dropdown" id="myDropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Java <b
+               class="caret"></b></a>
+               <ul class="dropdown-menu">
+                  <li><a id="action-1" href="#">
+                     jmeter</a>
+                  </li>
+                  <li><a href="#">EJB</a></li>
+                  <li><a href="#">Jasper Report</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">分离的链接</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">另一个分离的链接</a></li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+   </div>
+   </nav>
+</div>
+<script>
+   $(function(){
+
+//注：
+       //a.属性：无
+
+       //b.方法：基本没什么用
+       //    $(".dropdown-toggle").dropdown('');
+       //    $(".dropdown-toggle").dropdown('toggle');
+
+       //c.事件：同modal插件
+       /*
+           $("#myDropdown").on("show.bs.dropdown",function(){
+              alert("show.bs.dropdown");
+           });
+           $("#myDropdown").on("shown.bs.dropdown",function(){
+              alert("shown.bs.dropdown");
+           });
+           $("#myDropdown").on("hide.bs.dropdown",function(){
+              alert("hide.bs.dropdown");
+           });
+           $("#myDropdown").on("hidden.bs.dropdown",function(){
+              alert("hidden.bs.dropdown");
+           });
+       */
+   });
+</script>
+
+</body>
+</html>

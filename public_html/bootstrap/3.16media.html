@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>多媒体</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+</head>
+
+<!--
+
+    注：
+        a.单个        外层                              .media                              div
+                      中层      图标                    .media-left                         div
+                                        居左上          默认
+                                        居左中          .media-left后加.media-middle
+                                        居左下          .media-left后加.media-bottom
+                                        居右上          .media-left后加.pull-right
+
+                                文体                    .media-body                         div
+
+                      内层      图标之内                                                    a>img
+
+                                文件之内                .media-heading                      h4
+                                                                                            p
+        b.多个        外层                              .media-list                         ul
+                      里面      即单个(.media的div改为.media的li)
+        c.嵌套        位置      p标签之后
+                      类型      .media类div|.media-list类ul
+
+
+
+
+
+
+-->
+
+<body>
+
+    <div class="container">
+
+
+        <ul class="media-list">
+            <li class="media">
+                <div class="media-left">
+                    <a href="#">
+                        <img src="icon.jpg" alt="媒体对象" style="width: 50px;">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">媒体标题</h4>
+                    <p>这是一些示例文本。这是一些示例文本。
+                        这是一些示例文本。这是一些示例文本。
+                        这是一些示例文本。这是一些示例文本。
+                        这是一些示例文本。这是一些示例文本。
+                        这是一些示例文本。这是一些示例文本。</p>
+                    <!-- 嵌套的媒体对象 -->
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img src="icon.jpg" alt="媒体对象" style="width: 50px;">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">嵌套的媒体标题</h4>
+                            这是一些示例文本。这是一些示例文本。
+                            这是一些示例文本。这是一些示例文本。
+                            这是一些示例文本。这是一些示例文本。
+                            这是一些示例文本。这是一些示例文本。
+                            这是一些示例文本。这是一些示例文本。
+                            <!-- 嵌套的媒体对象 -->
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img src="icon.jpg" alt="媒体对象" style="width: 50px;">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">嵌套的媒体标题</h4>
+                                    这是一些示例文本。这是一些示例文本。
+                                    这是一些示例文本。这是一些示例文本。
+                                    这是一些示例文本。这是一些示例文本。
+                                    这是一些示例文本。这是一些示例文本。
+                                    这是一些示例文本。这是一些示例文本。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 嵌套的媒体对象 -->
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img src="icon.jpg" alt="媒体对象" style="width: 50px;">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">嵌套的媒体标题</h4>
+                            这是一些示例文本。这是一些示例文本。
+                            这是一些示例文本。这是一些示例文本。
+                            这是一些示例文本。这是一些示例文本。
+                            这是一些示例文本。这是一些示例文本。
+                            这是一些示例文本。这是一些示例文本。
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="media">
+                <div class="media-left">
+                    <a href="#">
+                        <img src="icon.jpg" alt="媒体对象" style="width: 50px;">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">媒体标题</h4>
+                    这是一些示例文本。这是一些示例文本。
+                    这是一些示例文本。这是一些示例文本。
+                    这是一些示例文本。这是一些示例文本。
+                    这是一些示例文本。这是一些示例文本。
+                    这是一些示例文本。这是一些示例文本。
+                </div>
+            </li>
+        </ul>
+
+
+        <div class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img src="icon.jpg" alt="媒体对象" style="width: 50px;">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">媒体标题</h4>
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+            </div>
+        </div>
+        <div class="media">
+            <div class="media-left media-middle">
+                <a href="#">
+                    <img class="media-object" src="icon.jpg"
+                         alt="媒体对象" style="width: 50px;">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">媒体标题</h4>
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+            </div>
+        </div>
+        <div class="media">
+            <div class="media-left media-bottom">
+                <a href="#">
+                    <img class="media-object" src="icon.jpg"
+                         alt="媒体对象" style="width: 50px;">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">媒体标题</h4>
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+            </div>
+        </div>
+        <div class="media">
+            <div class="media-middle pull-right">
+                <a href="#">
+                    <img class="media-object" src="icon.jpg"
+                         alt="媒体对象" style="width: 50px;">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">媒体标题</h4>
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+            </div>
+        </div>
+        <div class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img src="icon.jpg" alt="媒体对象" style="width: 50px;">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">媒体标题</h4>
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                这是一些示例文本。这是一些示例文本。
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img src="icon.jpg" alt="媒体对象" style="width: 50px;">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">媒体标题</h4>
+                        这是一些示例文本。这是一些示例文本。
+                        这是一些示例文本。这是一些示例文本。
+                        这是一些示例文本。这是一些示例文本。
+                        这是一些示例文本。这是一些示例文本。
+                        这是一些示例文本。这是一些示例文本。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

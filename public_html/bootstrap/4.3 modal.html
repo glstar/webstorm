@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>模态框</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+</head>
+
+<!--
+
+    注1：CSS
+        a.tabindex  (能否获得焦点)     背景的button、a等       该属性的div本身        里面的button、a等
+                    1)不写             能                      不能                   能
+                    2)-1               不能                    不能                   能
+                    3)1                不能                    不能                   不能
+
+        b.背景                         .btn类             属性data-toggle="modal"(理想状态：点一下按钮弹出，再点一下按钮关闭)、                 button
+                                                              data-target="#myModal"
+                                       .btn类             属性data-toggle="modal"、                 a
+                                                              href="#myModal"
+        c.模框      外层1              .modal .fade类     属性id="myModal" 、                       div
+                                                              tabindex="-1"、
+                                                              role="dialog"、
+                                                              aria-labelledby="myModalLabel"、
+                                                              aria-hidden="true"
+                    外层2              .modal-dialog                                                div
+                                       .modal-lg(大)类加.modal-dialog之后
+                                       .modal-sm(小)类加.modal-dialog之后
+
+                    中层               .modal-content                                               div
+                    内层      头部     .modal-header                                                div
+                              头部内   .close             属性type="button"、                       button(实体&times;)
+                                                              data-dismiss="modal"(data属性的js动作控键调用方法)、
+                                                              aria-label="Close"
+                                       .modal-title       属性id="myModalLabel"                     h4
+                              主体     .modal-body                                                  div
+                              主体内   各种搭配
+                              尾部     .modal-footer                                                div
+                              尾部内   .btn               属性data-dismiss="modal"                  button(关闭)
+                                       .btn                                                         button(保存)
+-->
+
+<body>
+
+<div class="container">
+    <h2>创建模态框</h2>
+    <!-- 按钮触发模态框 -->
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" data-whatever="@mdo">
+        演示模态框
+    </button>
+
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="myModal" role="dialog" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        模态框（Modal）
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    按ESC键退出！
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">关闭
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        提交更改
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+</div>
+<script>
+    /*注2:用法(JS为主)
+
+
+
+//A.
+    在DOM加载完成时运行的代码
+         $(document).ready(function(){
+             // 在这里写你的代码...
+         });
+    可以简写成
+         jQuery(function(){
+            // 在这里写你的代码...
+         });
+    即
+         $(function () {
+            // 在这里写你的代码...
+         });
+
+    事件的DOM加载完成时运行的代码写法
+        $(function () { $('#myModal').on('hide.bs.modal', function () {
+            alert('嘿，我听说您喜欢模态框...');})
+        });
+    方法的DOM加载完成时运行的代码写法
+        $(function () { $('#myModal').modal({
+            keyboard: false
+        })});
+    */
+
+
+
+//B.
+    /*a.事件*/
+//        $('#myModal').on('show.bs.modal', function () {alert('show.bs.modal');})//在调用 show 方法后触发。
+//        $('#myModal').on('shown.bs.modal', function () {alert('shown.bs.modal');})//当模态框对用户可见时触发（将等待 CSS 过渡效果完成）。
+//        $('#myModal').on('hide.bs.modal', function () {alert('hide.bs.modal');})//当调用 hide 实例方法时触发。
+//        $('#myModal').on('hidden.bs.modal', function () {alert('hidden.bs.modal');})//当模态框完全对用户隐藏时触发。
+//        $('#myModal').on('loaded.bs.modal', function () {alert('loaded.bs.modal');})//当远程加载后触发。事实上刷新页面后即触发即已加载了远程文件内容，而非点击时加载远程文件内容。
+
+    /*b.方法*/
+//        $('#myModal').modal("toggle");//手动切换模态框(点一下开，再点一下关；条件是tabindex属性不写)。//事实上进行了一次打开或者关闭弹窗的过程，前面括号里的行为在不写这句代码时也可执行。
+//        $('#myModal').modal("show");//手动打开模态框。
+//        $('#myModal').modal("hide");//手动隐藏模态框。
+
+
+    /*c.参数*/
+//        $('#myModal').modal({keyboard: false});//接受一个可选的选项对象(按ecs键不能退出)。//事实上是以按ecs键不能退出的方式打开了一个弹窗，下次再打开还将是这种方式。
+//        $('#myModal').modal({backdrop: false});//(点旁边背景不能退出，且背景变为白色，与上面参数不能同时实用除非合起来写如下面，与下面data-backdrop等也不能同用[即$('#myModal').modal()方法每次都重写了html,去掉了诸如data-backdrop等属性])。
+          $('#myModal').modal({//合成写法的bug，无法刷新页面外加$(function(){})一样
+                backdrop: false,
+                keyboard: true,
+                show: false,//相比下面data-show:true的不默认加载，此处show:true是默认加载的，上面的方法show也是默认加载的
+                remote: 'remote.html'
+          });
+
+    /*d.data：都是加在button|a标签内
+        1) data-toggle="modal" data-target="#myModal"   button
+           data-toggle="modal" a="#myModal"   a
+        2) data-backdrop        true    //背景  黑灰透明，点  可关闭
+                                false   //背景不黑灰透明，点不可关闭
+                                static  //背景  黑灰透明，点不可关闭
+        3) data-keyboard        true    //ESC键  能退出
+                                false   //ESC键不能退出
+        4) data-show(不常用)    true    //首次弹出  单击
+                                false   //首次弹出  双击
+        5) data-remote|href     false   //默认
+                                remote.html//远程加载，即加载remote.html(同一目录文件亦可)文件的内容替换掉.modal-content类里的内容包括标签
+    */
+
+
+
+//C.
+
+     $('#myModal').on('show.bs.modal', function (e) {
+         var button = $(e.relatedTarget) ;// Button that triggered the modal
+         var recipient = button.data('whatever');// Extract info from data-* attributes
+                                               // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+                                               // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+         var modal = $(this);
+         modal.find('.modal-title').text('New message to ' + recipient) ;
+         modal.find('.modal-body input').val(recipient) ;
+     });
+
+
+
+
+
+
+
+
+//D.
+
+//    alert(jQuery());alert($());
+//    var person = jQuery();
+//    var animal = $();
+//    var pa = jQuery;
+//    var ap = $;
+//    print_array(person);
+//    document.write("<hr>");
+//    print_array(animal);
+//    document.write("<hr>");
+//    print_array(pa);
+//    document.write("<hr>");
+//    print_array(ap);
+//    function print_array(arr) {
+//        var i = 0;
+//        for (var key in arr) {
+//            if (typeof(arr[key]) == 'array' || typeof(arr[key]) == 'object') {//递归调用
+//                print_array(arr[key]);
+//            } else {
+//                document.write(key + ' = ' + arr[key] + '<br>');
+//                i++;
+//            }
+//            if(i>10) break;
+//        }
+//    }
+//
+</script>
+
+</body>
+</html>

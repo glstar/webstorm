@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>Bootstrap Scroll</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+</head>
+
+
+<!--
+    a.上部：监听(即导航栏)      外层         (.navbar .navbar-default)    id="myScrollspy"                              nav
+                                .
+                                .
+                                内层  普通项  ...                                                                       li
+                                                    ...                   href="#ios"                                   a
+                                              ...                                                                       li
+                                                    ...                   href="#svn"                                   a
+                                      下拉项 (.dropdown)                                                                li
+                                                    (.dropdown-toggle)    id="navbarDrop1"                              a
+                                                    (.dropdown-menu)      aria-labelledby="navbarDrop1"                 ul
+                                                            ...                                                         li
+                                                                    ...   href="#jmeter"                                a
+                                                            ...                                                         li
+                                                                    ...   href="#ejb"                                   a
+                                                            ...                                                         li
+                                                                    ...   href="#spring"                                a
+
+    b.下部：滚动                外层         style="height:200px;         id="myContent"                                div
+                                                    overflow:auto;        data-spy="scroll"
+                                                    position: relative;"  data-offset="0"
+                                                                          data-target="#myScrollspy"
+                                                    (若不加position: relative;属性.active加的位置[上高(变短)={总高(由position: relative;变长，不加变短)-下高(不变)}]总是指向第一个？？？？？)
+                                                    (offset设置为正数时，         .active加的位置[变长]                                                             总是指向稍后的位置)
+                                中层         .section                                                                   div
+                                内层         ...                          id="ios"                                      h4
+                                                    ...                                                                 small
+                                                            ...           onclick="removeSection(this);"                a
+                                             ...                                                                        p(文件内容多一些，不然最后几项不会有滚动，即达不到监听效果【重重重】)
+                                             ...                          id="svn"                                      h4
+                                                    ...                                                                 small
+                                                            ...           onclick="removeSection(this);"                a
+                                             ...                                                                        p
+                                             ...                          id="jmeter"                                   h4
+                                                    ...                                                                 small
+                                                            ...           onclick="removeSection(this);"                a
+                                             ...                                                                        p
+                                             ...                          id="ejb"                                      h4
+                                                    ...                                                                 small
+                                                            ...           onclick="removeSection(this);"                a
+                                             ...                                                                        p
+                                             ...                          id="spring"                                   h4
+                                                    ...                                                                 small
+                                                            ...           onclick="removeSection(this);"                a
+                                             ...                                                                        p
+
+
+
+-->
+
+
+<body id="myContent" data-spy="scroll"   data-offset="70" data-target="#myScrollspy">
+
+<div class="container">
+    <nav id="myScrollspy" class="navbar navbar-default navbar-fixed-top
+    " role="navigation">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-js-navbar-scrollspy">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">教程名称</a>
+        </div>
+        <div class="collapse navbar-collapse bs-js-navbar-scrollspy">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#ios">iOS</a></li>
+                <li><a href="#svn">SVN</a></li>
+                <li class="dropdown">
+                    <a href="#" id="navbarDrop1" class="dropdown-toggle" data-toggle="dropdown">
+                        Java <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="navbarDrop1">
+                        <li><a href="#jmeter" tabindex="-1">jmeter</a></li>
+                        <li><a href="#ejb" tabindex="-1">ejb</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#spring" tabindex="-1">spring</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div style="margin-top: 70px;">
+<!--注:
+    1.李炎恢关于data-offset指向
+        正数:值越大表示将要被加.active的元素【即高亮元素】离页面窗口【当data-spy加在body元素上时】的顶部的距离超远
+    2.canpu关于被隐藏部分的显示
+        如:<div style="margin-top: 70px;{如上}">
+        非:<body style="margin-top: 70px;">{将导致滚动条拉到最上面时，没有一个导航栏连接被选中}
+    3.依然存在的问题
+        点击导航栏连接时，跳转的对应锚点元素的部分显示【上面小部分】被隐藏【云知梦、极客学院、canpu都未解决】
+        解决方法：
+        $("a[href='#ios']").click(function(event){
+            $(window).scrollTop(document.getElementById("ios").offsetTop-65);//a.张鑫旭关于锚点定位机制：页内锚点跳转是通过滚动条的高度设置来现实的
+            event.preventDefault();//b.阻止事件的默认行为，例如click <a>后的跳转~在W3c中，使用preventDefault（）方法~在IE下设置window.event.returnValue = false;
+        })
+-->
+        <div class="section">
+            <h4 id="ios">iOS<small><a href="#" onclick="removeSection(this);">
+                × 删除该部分</a></small>
+            </h4>
+            <p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple
+                TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
+        </div>
+        <div class="section">
+            <h4 id="svn">SVN<small></small></h4>
+            <p>Apache Subversion，通常缩写为 SVN，是一款开源的版本控制系统软件。Subversion 由 CollabNet 公司在 2000 年创建。但是现在它已经发展为 Apache Software Foundation 的一个项目，因此拥有丰富的开发人员和用户社区。</p>    </div>
+        <div class="section">
+            <h4 id="jmeter">jMeter<small><a href="#" onclick="removeSection(this);">
+                × 删除该部分</a></small>
+            </h4>
+            <p>jMeter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。</p>
+        </div>
+        <div class="section">
+            <h4 id="ejb">EJB</h4>
+            <p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。</p>
+        </div>
+        <div class="section">
+            <h4 id="spring">Spring</h4>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+        </div>
+    </div>
+    <span id="activeitem" style="color:red;"></span>
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+        $("a[href='#ios']").click(function(event){
+            $(window).scrollTop(document.getElementById("ios").offsetTop-65);
+            event.preventDefault();
+        })
+        $("a[href='#svn']").click(function(event){
+            $(window).scrollTop(document.getElementById("svn").offsetTop-65);
+            event.preventDefault();
+        })
+        $("a[href='#jmeter']").click(function(event){
+            $(window).scrollTop(document.getElementById("jmeter").offsetTop-65);
+            event.preventDefault();
+        })
+        $("a[href='#ejb']").click(function(event){
+            $(window).scrollTop(document.getElementById("ejb").offsetTop-65);
+            event.preventDefault();
+        })
+        $("a[href='#spring']").click(function(event){
+            $(window).scrollTop(document.getElementById("spring").offsetTop-65);
+            event.preventDefault();
+        })
+
+
+        $(function() {
+            //a.参数：即去掉#myContent元素的data-*部分，使用下列参数达到相同效果(spy部分可省略|全部省略亦可)
+            //$("#myContent").scrollspy({
+            //    target:"#myScrollspy",
+            //    offset:0
+            //});
+        });
+
+        //b.方法：refresh
+        function removeSection(e){//方法不能在$(function(){})中实现【重重重重重】
+            //console.log(e);//<a onclick="removeSection(this);" href="#">
+            //console.log($(e).parents(".section"));//Object[div.section]
+            $(e).parents(".section").remove();
+            $("#myContent").scrollspy('refresh')
+        };
+        $(function() {//$(function(){})能多次执行，且这次不覆盖上次
+            //或如下实现
+            /*
+             removeSection = function(e) {
+             $(e).parents(".section").remove();
+             $('[data-spy="scroll"]').each(function () {
+             var $spy = $(this).scrollspy('refresh')
+             });
+             }
+             */
+
+            //c.事件：activate.bs.scrollspy
+            //$("#myScrollspy").on("activate.bs.scrollspy",function(){
+            //    alert('新条目');
+            //});
+            //another.eg
+            $('#myScrollspy').on('activate.bs.scrollspy', function () {
+                var currentItem = $(".nav li.active > a").text();
+                $("#activeitem").html("目前您正在查看 - " + currentItem);
+            });
+        });
+
+    </script>
+
+
+</div>
+
+
+
+</body>
+</html>

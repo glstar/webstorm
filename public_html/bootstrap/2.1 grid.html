@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" >
+    <title>网格</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!--注2：
+    a.必须加<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" >否则，iphone5s等微小屏认col-sm-*,不认col-xs-*等问题。
+    b.栅格设置11：1或1：11时，宽度小于377px(???)时，不能正确显示（不能显示在一行）。
+    c.col-xs-*、col-sm-*、col-md-*、col-lg-*类依次向后兼容屏幕宽度（如col-sm-2包括col-md-2、col-lg-2等）。
+    d.1）偏移列.col-md-offset-* 类、2）嵌套列、3）列排序 .col-md-push-* 和 .col-md-pull-* 类。
+-->
+
+<div class="container">
+    <h1>Hello, world!</h1>
+
+
+
+    <div class="row">
+        <p>排序前</p>
+        <div class="col-xs-1" style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+            我在左边
+        </div>
+        <div class="col-xs-11" style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+            我在右边
+        </div>
+    </div><br>
+    <div class="row">
+        <p>排序后</p>
+        <div class="col-xs-1 col-xs-push-11"
+             style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444,
+         inset -1px 1px 1px #444;">
+            我在左边
+        </div>
+        <div class="col-xs-11 col-xs-pull-1"
+             style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444,
+         inset -1px 1px 1px #444;">
+            我在右边
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-3" style="background-color: #dedef8;box-shadow:
+         inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+            <h4>第一列</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+
+        <div class="col-md-9" style="background-color: #dedef8;box-shadow:
+         inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+            <h4>第二列 - 分为四个盒子</h4>
+            <div class="row">
+                <div class="col-md-6" style="background-color: #B18904;
+               box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+                    <p>Consectetur art party Tonx culpa semiotics. Pinterest
+                        assumenda minim organic quis.
+                    </p>
+                </div>
+                <div class="col-md-6" style="background-color: #B18904;
+               box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+                    <p> sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6" style="background-color: #B18904;
+               box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+                    <p>quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+                <div class="col-md-6" style="background-color: #B18904;
+               box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="row" >
+        <div class="col-xs-6 col-xs-offset-3"
+             style="background-color: #dedef8;box-shadow:
+         inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="row">
+            <div class="col-xs-6 col-sm-3"
+                 style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="col-xs-6 col-sm-3"
+                 style="background-color: #dedef8;box-shadow:
+         inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                    enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                    nisi ut aliquip ex ea commodo consequat.
+                </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                    eiusmod tempor incididunt ut.
+                </p>
+            </div>
+
+            <div class="clearfix visible-xs"></div>
+
+            <div class="col-xs-6 col-sm-3"
+                 style="background-color: #dedef8;
+         box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </div>
+            <div class="col-xs-6 col-sm-3"
+                 style="background-color: #dedef8;box-shadow:
+         inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                    enim ad minim
+                </p>
+            </div>
+
+    </div>
+    <div class="row">
+    <!--注1：col-xs-1,col-xs-11在宽度为320px之类的手机上不能在一行显示的BUG(原因为)$('.col-xs-1')的左右padding为30px后，width为0-->
+        <div class="col-xs-1 col-md-6 col-lg-8"  style="background-color: red;">
+            <p>
+            </p>
+
+            <p>
+            </p>
+        </div>
+
+        <div class="col-xs-11 col-md-6 col-lg-4" style="background-color: orange;">
+        <p>
+        </p>
+
+        <p>
+        </p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

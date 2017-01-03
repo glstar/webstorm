@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>折叠</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+</head>
+
+<!--
+
+注1:css
+
+        a.组外层                       .panel-group                         id="accordion"[手风琴必加，否则div亦可去]   div
+        b.件外层                       .panel panel-default                                                             div
+        c.  中层         上部          .panel-heading                                                                   div
+                         下部          .panel-collapse .collapse .in        id="collapseOne"[2、3、4等]                 div
+        d.  内层         上部          .btn .btn-primary                    data-toggle="collapse"                      button|a
+                                                                            data-parent="#accordion"[手风琴必加]
+                                                                            data-target="#collapseOne"|href="#collapseOne"
+                         下部          .panel-body                                                                      div
+
+
+
+        e.件简单式       上部          .btn .btn-primary                    data-toggle="collapse" data-target="#demo"  button
+                         下部          .collapse .in                        id="demo"                                   div
+                                            .well                                                                       div
+
+
+-->
+
+<body>
+    <div class="container">
+
+        <button type="button" class="btn btn-primary" data-toggle="collapse"
+                data-target="#demo">
+            简单的可折叠组件
+        </button>
+
+        <div id="demo" class="collapse in">
+            <div class="well">
+                Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                vice lomo.
+
+            </div>
+
+        </div>
+
+
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion"
+                           href="#collapseOne">
+                            点击我进行展开，再次点击我进行折叠。第 1 部分
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                        cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                        vice lomo.
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion"
+                           href="#collapseTwo">
+                            点击我进行展开，再次点击我进行折叠。第 2 部分
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                        cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                        vice lomo.
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion"
+                           href="#collapseThree">
+                            点击我进行展开，再次点击我进行折叠。第 3 部分
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                        cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                        vice lomo.
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion"
+                           href="#collapseFour">
+                            点击我进行展开，再次点击我进行折叠。第 4 部分
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                        cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                        vice lomo.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+
+//注2：js
+
+        /*a.data:加在button|a标签内
+            1)data-toggle="collapse"    折叠插件必加属性(其他插件？？？)
+            2)data-target="#.."         关联的折叠内容id
+            3)data-parent="#.."         手风琴式组外层id
+        */
+
+        //b.参数：无法实现
+
+
+        /*c.方法：
+             $(function () { $('#collapseFour').collapse({
+                toggle: true//true显示，false隐藏
+             })});
+             $(function () { $('#collapseTwo').collapse('show')});
+             $(function () { $('#collapseOne').collapse('hide')});
+             $(function () { $('#collapseThree').collapse('toggle')});
+        */
+
+
+        /*d.事件:可针对组也可只针对件
+            组
+                 $(function () {//同下4个事件都可用
+                    $('#accordion').on('show.bs.collapse', function () {
+                        alert('嘿，当您展开时会提示本警告');
+                    })
+                 });
+            件
+                 $(function () {
+                    $('#collapseOne').on('show.bs.collapse', function () {
+                        alert('嘿，当您show时会提示本警告');
+                    })
+                 });
+                 $(function () {
+                    $('#collapseTwo').on('shown.bs.collapse', function () {
+                        alert('嘿，当您shown时会提示本警告');
+                    })
+                 });
+                 $(function () {
+                    $('#collapseThree').on('hide.bs.collapse', function () {
+                        alert('嘿，当您hide时会提示本警告');
+                    })
+                 });
+                 $(function () {
+                    $('#collapseFour').on('hidden.bs.collapse', function () {
+                        alert('嘿，当您hidden时会提示本警告');
+                    })
+                 });
+        */
+
+    </script>
+
+</body>
+</html>

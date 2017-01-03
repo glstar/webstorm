@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" >
+    <title>帮助</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+</head>
+
+<!--
+    注：
+        a. 关闭图标(实体&times;)
+            .close类得到图标样式(可用button元素)，并无动作
+        b. 插入符(无实体，用元素的边框实现)
+            .caret类得到图标样式(可用span、p等元素)，并无动作
+            代码如下：
+            .caret {
+                    border-left: 4px solid transparent;
+                    border-right: 4px solid transparent;
+                    border-top: 4px dashed;
+                    display: inline-block;
+                    height: 0;
+                    margin-left: 2px;
+                    vertical-align: middle;
+                    width: 0;
+            }
+        c. 快速浮动
+            .pull-left 或 .pull-right
+        d. 居中内容块
+            .center-block 来居中元素
+        e. 清除浮动
+            .clearfix类嵌套在浮动的几个元素外面
+            实现eg.
+            <div class="hello"  style="background: #D8D8D8;border: 1px solid #000;padding: 10px;">
+                <div class="pull-left" style="background:#58D3F7;">
+                    向左快速浮动
+                </div>
+                <div class="pull-right" style="background:#58D3F7;">
+                    向右快速浮动
+                </div>
+            </div>
+
+            <style>
+                .hello:before,.hello:after{display: table;content: " "}
+                .hello:after{clear: both;}
+            </style>
+        f. 显示隐藏
+            .show 和 .hidden
+        g. 屏幕阅读器
+            .sr-only类使元素隐藏所有设备，除屏幕阅读器，eg如正下方
+
+-->
+
+<body>
+
+    <div class="container">
+
+        <div class="row" style="padding: 91px 100px 19px 50px;">
+            <form class="form-inline" role="form">
+                <div class="form-group">
+                    <label class="sr-only" for="email">Email 地址</label>
+                    <input type="email" class="form-control" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="pass">密码</label>
+                    <input type="password" class="form-control" placeholder="Password">
+                </div>
+        </div>
+
+        <div class="row" style="padding: 91px 100px 19px 50px;">
+            <div class="show" style="left-margin:10px;width:300px;background-color:#ccc;">
+                这是 show class 的实例
+            </div>
+            <div class="hidden" style="width:200px;background-color:#ccc;">
+                这是 hide class 的实例
+            </div>
+        </div>
+
+        <div class="center-block" style="width:200px;background-color:#ccc;">
+            这是 center-block 实例
+        </div>
+        <div class="hello"  style="background: #D8D8D8;border: 1px solid #000;padding: 10px;">
+            <div class="pull-left" style="background:#58D3F7;">
+                向左快速浮动
+            </div>
+            <div class="pull-right" style="background:#58D3F7;">
+                向右快速浮动
+            </div>
+        </div>
+
+        <style>
+            .hello:before,.hello:after{display: table;content: " "}
+            .hello:after{clear: both;}
+        </style>
+
+        <p>插入符实例
+            <span class="caret"></span>
+        </p>
+
+        <p>关闭图标实例
+            <button type="button" class="close" aria-hidden="true">
+                &times;
+            </button>
+        </p>
+    </div>
+
+
+</body>
+</html>

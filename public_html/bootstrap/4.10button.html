@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>按钮</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+</head>
+
+<!--
+
+注1：css
+
+            a.外层          复用          .btn-group                      data-toggle="buttons"                         div
+            b.中层          复用          .btn .btn-* [.active]                                                         label
+                            单用          .btn .btn-*                     autocomplete="off" data-loading-text="load.." button
+            c.内层          复用          ...                             type="radio"|type="checkbox" [checked]        input
+
+
+            d.属性autocomplete="off"的作用: 防止火狐等浏览器的页面多次加载后按钮的禁用或选中状态。
+            e.属性data-loading-text="loading..."中的loading可以改成abc、123等，例如：data-abc-text、data-123-text等，
+                相应的js加载动作也可以由$(this).button('loading')改成$(this).button('abc')、$(this).button('123')。
+-->
+
+<body>
+
+    <div class="container">
+        <button type="button" class="btn btn-default"
+                data-toggle="button" autocomplete="off"> 单切(单个切换)
+        </button>
+
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary active">
+                <input type="checkbox" checked> 选项 1
+            </label>
+            <label class="btn btn-primary">
+                <input type="checkbox"> 选项 2
+            </label>
+            <label class="btn btn-primary">
+                <input type="checkbox"> 选项 3
+            </label>
+        </div>
+
+
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary active">
+                <input type="radio" name="options" id="option1" checked> 选项 1
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option2"> 选项 2
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option3"> 选项 3
+            </label>
+        </div>
+
+
+        <h2>点击每个按钮查看方法效果</h2>
+        <h4>演示 .button('toggle') 方法</h4>
+            <button id="myButtons1" type="button" class="btn btn-primary" autocomplete="off">单切</button>
+        <h4>演示 .button('loading') 方法</h4>
+            <button id="myButtons2" type="button" class="btn btn-primary" data-loading-text="Loading..." autocomplete="off">加载
+            </button>
+        <h4>演示 .button('reset') 方法</h4>
+            <button id="myButtons3" type="button" class="btn btn-primary" data-loading-text="Loading..." autocomplete="off">重置
+            </button>
+        <h4>演示 .button(string) 方法</h4>
+            <button id="myButtons4" type="button" class="btn btn-primary" data-complete-text="Loading finished" autocomplete="off">自定义
+            </button>
+    </div>
+
+
+<script>
+
+//注2：单用js
+
+        /*a.data:单个切换
+            data-toggle="button"
+        */
+
+
+
+        //b.方法button('toggle')、button('loading')、button('reset')、button(string)
+            $(function () {
+                $("#myButtons1").click(function(){//1.单切
+                    $(this).button('toggle');//可替换a.data的data-toggle="button"属性
+                });
+                $("#myButtons2").click(function(){//2.加载
+                    $(this).button('loading');//修改相应的属性data-loading-text="..."为data-aaa-text="..."时，也可以写成$(this).button('aaa')
+                });
+                $("#myButtons3").click(function(){//3.加载重置
+//                    $(this).button('loading').delay(1000).queue(function() {//只能执行一次
+//                        $(this).button('reset');//或$(this).button('loading').button('reset');
+//                    });
+                    //或者
+                    var mybtn = $(this).button('loading');
+                    setTimeout(function(){//可多次执行
+                        mybtn.button('reset');//若语句$(this).button('reset');则无法重置，上面该语句可以
+                    },1000);
+                });
+                $("#myButtons4").click(function(){//4.自定义：相当于 2默认的加载 + 2修改后加载
+//                    $(this).button('loading').delay(1000).queue(function() {//同上只能执行一次
+//                        $(this).button('complete');
+//                    });
+                    //或者
+                    var mybtn = $(this).button('loading');
+                    setTimeout(function(){//同上可多次执行
+                        mybtn.button('complete');//若语句$(this).button('reset');则无法重置，上面该语句可以
+                    },1000);
+                });
+            });
+
+</script>
+
+</body>
+</html>

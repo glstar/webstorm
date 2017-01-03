@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" >
+    <title>下拉菜单</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+</head>
+
+
+<!--
+    注：
+        a.整体： div .dropdown类(.pull-right整体居右)
+        b.上部按钮： button 1).dropdown-toggle类作用？？？
+                            2)属性data-toggle="dropdown"关联显示/隐藏菜单部分
+        c.下部菜单： 1)ul  .dropdown-menu类，role:menu(.dropdown-menu-right仅菜单居右)
+                     2)li  role:presentation(样式)
+                           2.1)标题菜单：.dropdown-header
+                           2.2)分割菜单：.divider
+                           2.3)禁用菜单：.disabled
+                     3)a   role:menuitem，可设置tabindex更改tab顺序
+
+-->
+
+
+<body>
+
+<div class="container">
+    <div class="dropdown pull-right">
+        <button type="button" class="btn btn-default dropdown-toggle" id="dropdownMenu1"
+                data-toggle="dropdown">
+            主题
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <li role="presentation" class="dropdown-header">下拉菜单标题</li>
+            <li role="presentation">
+                <a role="menuitem" tabindex="2" href="#">Java</a>
+            </li>
+            <li role="presentation" class="disabled">
+                <a role="menuitem" tabindex="3" href="#">数据挖掘</a>
+            </li>
+            <li role="presentation">
+                <a role="menuitem" tabindex="6" href="#">
+                    数据通信/网络
+                </a>
+            </li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">下拉菜单标题</li>
+            <li role="presentation">
+                <a role="menuitem" tabindex="5" href="#">分离的链接</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

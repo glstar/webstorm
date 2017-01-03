@@ -1,16 +1,164 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
+<head>
     <meta charset="UTF-8">
-        <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" >
+        <title>|~</title>
 	    <link rel="stylesheet" href="bootstrap.min.css">
+
 	    </head>
 	    <body>
+
+
 	        <form role="form">
 		        <div class="form-group">
-			            <label>用户名(nice)hello world 2016! never give up!!</label>
+			            <label  style="line-height: 5;border: 1px solid red;">用户名1.0</label>
+                        <label  style="line-height: 5rem;border: 1px solid red;">用户名1.0</label>
 				        <input type="date" class="form-control" placeholder="user">
 				</div>
 			</form>
+            <div style="width: 100%;">
+                <video width="320" height="240" controls="controls">
+                    <source src="bhutadechamkadiyo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video width="320" height="240" src="bhutadechamkadiyo.mp4" controls="controls"> 您的浏览器不支持 video 标签。 </video>
+            </div>
+
+            <div style="width: 50%;float: left;">
+                <img src="http://www.pp3.cn/uploads/allimg/111122/112U12H1-2.jpg" class="img-responsive" alt="响应式图像">
+            </div>
+            <div style="width: 50%;float: left;">
+                <img src="http://www.pp3.cn/uploads/allimg/111122/112U12H1-2.jpg" class="img-responsive" alt="响应式图像">
+            </div>
+
+
+            <div id="hdiv"><a href="#">border-radius</a> 属性允许您向元素添加圆角。</div>
+            <style>
+            #hdiv
+            {
+
+            text-align:center;
+            border:2px solid #a1a1a1;
+            padding:10px 40px;
+            background:#dddddd;
+            /*width:350px;(注1：如果宽度设置大于屏幕宽度，将导致页面可缩放，但最终宽度也不会大于该设置的宽度)*/
+            /*注3
+                @screen-xs-max:767px;
+                    @screen-sm-min:768px;
+                @screen-sm-max:991px;
+                    @screen-md-min:992px;
+                @screen-md-max:1199px;
+                    @screen-lg-min:1200px;
+
+
+                .container{
+                    padding-right:15px;
+                    padding-left:15px;
+                    margin-right:auto;
+                    margin-left:auto
+                }
+                @media (min-width:768px){
+                    .container{
+                        width:750px
+                    }
+                }
+                @media (min-width:992px){
+                    .container{
+                        width:970px
+                    }
+                }
+                @media (min-width:1200px){
+                    .container{
+                        width:1170px
+                    }
+                }
+            */
+            border-radius:5px;
+            -moz-border-radius:25px; /* 老的 Firefox */
+            clear: both;
+                margin-top: 100px;
+            }
+            </style>
+
+
+            <div style="width: 10%;height:50px;float:left;margin-top: 10px;border: 1px solid fuchsia;">
+                <label  style="line-height: 5rem;border: 1px solid red;">用户名1.0</label>
+            </div>
+            <div style="width: 10%;height:50px;float:left;margin: 1.62857143;border: 1px solid navy;">
+                <label  style="line-height: 5;border: 1px solid red;">用户名1.0</label>
+            </div>
+            <!--注2：
+                    a.line-height设置数字，此数字会与当前的字体尺寸相乘来设置行间距;
+                    b.在设置某父元素（P）的line-height值为num时，确定的只是因子或者说成是一个比例num，P的子元素（C）line-height = num * C.fontSize。
+                    c.margin取值范围没有纯数值。
+                    d.1.60857143rem最终的px值四舍五入取整（桌面手机端一样）
+            -->
+            <div style="width: 10%;height:50px;float:left;margin-top: 1.60857143rem;border: 1px solid purple;"></div>
+            <div style="width: 10%;height:50px;float:left;margin-top: 1.62857143rem;border: 1px solid purple;"></div>
+            <div style="width: 10%;height:50px;float:left;margin-top: 1.63857143rem;border: 1px solid purple;"></div>
+            <div style="width: 10%;height:50px;float:left;margin-top: 1.64857143rem;border: 1px solid purple;"></div>
+            <div style="width: 10%;height:50px;float:left;margin-top: 1.65857143rem;border: 1px solid purple;"></div>
+            <div style="width: 10%;height:50px;float:left;margin-top: 1.69857143rem;border: 1px solid purple;"></div>
+            <div style="width: 10%;height:50px;float:left;margin-top: 2;border: 1px solid lime;"></div>
+            <div style="width: 10%;height:50px;float:left;margin-top: 2rem;border: 1px solid aqua;"></div>
+            <div style="width: 10%;height:50px;float:left;margin-top: 5;border: 1px solid pink;"></div>
+            <div style="width: 10%;height:50px;float:left;margin-top: 5rem;border: 1px solid brown;"></div>
+
+
+            <div class="container" style="clear:both;width: 100%;height:50px;margin-top: 10px;border: 1px solid fuchsia;">container</div>
+            <div class="container-fluid" id="mydiv" style="clear: both;width: 100%;height:50px;margin-top: 10px;border: 1px solid fuchsia;">container-fluid</div>
+<script>
+    document.write(document.body.clientWidth+"<br />");//页面不动时不包括滚动条的可视宽度
+    document.write(document.body.offsetWidth+"<br />");//好像同上
+    document.write(document.body.scrollWidth+"<br />");//页面拉动时不包括滚动条的可视宽度
+    document.write(document.body.scrollLeft+"<br />");
+    document.write(document.documentElement.scrollLeft+"<br />");
+    document.write(window.screenLeft+"<br />");//当前位置离窗口开始位置(非不动时窗口左上角)水平坐标，火狐用window.screenX
+    document.write(window.screen.width+"<br />");//???
+    document.write(window.screen.availWidth +"<br /><br />");//屏幕宽度
+
+    document.write(document.body.clientHeight+"<br />");//1 此1、2、3三项等差，为递增20px
+    document.write(document.body.offsetHeight+"<br />");//2
+    document.write(document.body.scrollHeight+"<br />");//3
+    document.write(document.body.scrollTop+"<br />");
+    document.write(document.documentElement.scrollTop+"<br />");
+    document.write(window.screenTop+"<br />");//当前位置离窗口开始位置(非不动时窗口左上角)水平垂直坐标，火狐用window.screenY
+    document.write(window.screen.Height+"<br />");//???
+    document.write(window.screen.availHeight +"<br />");//除任务栏屏幕高度
+</script>
+            <style>
+                /*@media screen and (min-width:320px){*/
+                    /*body{*/
+                        /*background:red;*/
+                    /*}*/
+                /*}*/
+                /*@media screen and (orientation:landscape){*/
+                    /*body{*/
+                    /*background:maroon;*/
+                    /*}*/
+                /*}*/
+                /*@media screen and (orientation:portrait){*/
+                    /*body{*/
+                        /*background:aqua;*/
+                    /*}*/
+                /*}*/
+                /*@media screen and (-webkit-min-device-pixel-ratio: 1){*/
+                    /*body{*/
+                        /*background:#ffffff;*/
+                    /*}*/
+                /*}                */
+                /*@media screen and (-webkit-min-device-pixel-ratio: 2){*/
+                    /*body{*/
+                        /*background:teal;*/
+                    /*}*/
+                /*}*/
+                /*@media screen and (-webkit-min-device-pixel-ratio: 3){*/
+                    /*body{*/
+                        /*background:olive;*/
+                    /*}*/
+                /*}*/
+            </style>
+
 		 </body>
 </html>

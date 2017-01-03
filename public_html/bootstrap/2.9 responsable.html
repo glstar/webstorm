@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" >
+    <title>响应</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+</head>
+<!--
+    a.响应式实用工具
+        .visible-xs	额外的小设备（小于 768px）可见
+        .visible-sm	小型设备（768 px 到 991 px）可见
+        .visible-md	中型设备（992 px 到 1199 px）可见
+        .visible-lg	大型设备（1200 px 及以上）可见
+        .hidden-xs	额外的小设备（小于 768px）隐藏
+        .hidden-sm	小型设备（768 px 到 991 px）隐藏
+        .hidden-md	中型设备（992 px 到 1199 px）隐藏
+        .hidden-lg	大型设备（1200 px 及以上）隐藏
+-->
+<body>
+    <div class="container">
+
+        <div class="row visible-on">
+            <div class="col-xs-6 col-sm-3" style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+                <span class="hidden-xs">特别小型</span>
+                <span class="visible-xs">✔ 在特别小型设备上可见</span>
+            </div>
+            <div class="col-xs-6 col-sm-3" style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+                <span class="hidden-sm">小型</span>
+                <span class="visible-sm">✔ 在小型设备上可见</span>
+            </div>
+            <div class="clearfix visible-xs"></div>
+            <div class="col-xs-6 col-sm-3" style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+                <span class="hidden-md">中型</span>
+                <span class="visible-md">✔ 在中型设备上可见</span>
+            </div>
+            <div class="col-xs-6 col-sm-3" style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+                <span class="hidden-lg">大型</span>
+                <span class="visible-lg">✔ 在大型设备上可见</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

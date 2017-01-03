@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" >
+    <title>字体图标</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 50px;
+            padding-left: 50px;
+        }
+    </style>
+    <!--[if lt IE 9]>
+        <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<!--
+    注：
+        a. (if lessthan ie9)
+            <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        b. 插件JS
+            -- jQuery (Bootstrap 插件需要引入) --
+            <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+            -- 包含了所有编译插件 --
+            <script src="bootstrap.min.js"></script>
+        c. font-style:
+            normal、italic、oblique
+        *d. 图标文件(fonts文件夹下)
+            glyphicons-halflings-regular.eot
+            glyphicons-halflings-regular.svg
+            glyphicons-halflings-regular.ttf
+            glyphicons-halflings-regular.woff
+        *e. css类源码：
+            @font-face {
+                  font-family: 'Glyphicons Halflings';
+                  src: url('../fonts/glyphicons-halflings-regular.eot');
+                  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+            }
+            .glyphicon {
+                  position: relative;
+                  top: 1px;
+                  display: inline-block;
+                  font-family: 'Glyphicons Halflings';
+                  -webkit-font-smoothing: antialiased;
+                  font-style: normal;
+                  font-weight: normal;
+                  line-height: 1;
+                  -moz-osx-font-smoothing: grayscale;
+            }
+            .glyphicon-user:before {
+                  content: "\e008";
+            }
+        f. 用法
+            <span class="glyphicon glyphicon-user"></span>
+            <span class="glyphicon glyphicon-user"></span> User
+            <span class="glyphicon glyphicon-home">Home</span>
+        g. 定制
+            <button type="button" class="btn btn-default btn-xs" style="font-size: 60px;color: rgb(212, 106, 64);text-shadow: black 5px 3px 3px;">
+                <span class="glyphicon glyphicon-user">hello</span> User
+            </button>
+
+
+
+-->
+
+
+<body>
+<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#"><span class="glyphicon glyphicon-home"> Home</span></a></li>
+                <li><a href="#shop"><span class="glyphicon glyphicon-shopping-cart"> Shop</span></a></li>
+                <li><a href="#support"><span class="glyphicon glyphicon-headphones"> Support</span></a></li>
+            </ul>
+        </div><!-- /.nav-collapse -->
+
+
+
+
+    </div>
+</div>
+
+    <div class="container">
+        <p>
+            <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-sort-by-attributes"></span>
+            </button>
+            <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+            </button>
+            <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-sort-by-order"></span>
+            </button>
+            <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-sort-by-order-alt"></span>
+            </button>
+            <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-thumbs-up"></span>
+            </button>
+        </p>
+        <button type="button" class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-user"></span> User
+        </button>
+        <button type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-user"></span> User
+        </button>
+        <button type="button" class="btn btn-default btn-xs" style="font-size: 60px;color: rgb(212, 106, 64);text-shadow: black 5px 3px 3px;">
+            <span class="glyphicon glyphicon-user">hello</span> User
+        </button>
+    </div>
+
+<!-- jQuery (Bootstrap 插件需要引入) -->
+<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<!-- 包含了所有编译插件 -->
+<script src="bootstrap.min.js"></script>
+
+</body>
+</html>

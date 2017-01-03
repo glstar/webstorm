@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" >
+    <title>按钮组</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+</head>
+
+
+<!--
+    注：
+
+        a.外层(可无)：         .btn-toolbar                                 role:toolbar           div(几组按纽)
+        b.中层：               .btn-group                                   role:group             div(一组按纽)
+                    大小：     .btn-group-lg(大)加.btn-group之后                                   div
+                                        留空(默)加.btn-group之后
+                               .btn-group-sm(中)加.btn-group之后
+                               .btn-group-xs(小)加.btn-group之后
+                    垂直：     .btn-group-vertical替换.btn-group                                   div
+                两边对齐： 外  .btn-group .btn-group-justified                                     div
+                           中  .btn-group                                                          div
+                    嵌套： 外  .btn-group|.btn-group-vertical                                      div
+                           中  .btn-group                                                          div
+                           中(上拉)
+                               .btn-group .dropup                                                  div
+
+        c.内层      普通：     .btn .btn-default                                                   button(n个一组)
+                    两齐：     .btn .btn-default                                                   button(1个一组)
+                    嵌套：     .btn .btn-default .dropdown-toggle           data-toggle="dropdown" button
+                                    .caret                                                         span
+                               .dropdown-menu                                                      ul
+                                    ...                                                            li
+                                         ...                                                       a
+                    大小(不能与上面div元素的大小类共用)
+                               .btn-lg(大)加.btn .btn-default之后                                  button
+                                  留空(默)加.btn .btn-default之后                                  button
+                               .btn-sm(中)加.btn .btn-default之后                                  button
+                               .btn-xs(小)加.btn .btn-default之后                                  button
+
+
+
+-->
+
+
+<body>
+
+    <div class="container">
+
+
+        <div class="btn-group btn-group-justified" role="toolbar">
+            <div class="btn-group">
+                <button type="button" class="btn btn-default">Button1</button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-default">Button6</button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-default">Button8</button>
+            </div>
+        </div>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-default">Button1</button>
+            <button type="button" class="btn btn-default">Button2</button>
+            <button type="button" class="btn btn-default">Button2</button>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default">Button1</button>
+            <button type="button" class="btn btn-default">Button2</button>
+            <button type="button" class="btn btn-default">Button2</button>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default">Button1</button>
+            <button type="button" class="btn btn-default">Button2</button>
+            <button type="button" class="btn btn-default">Button2</button>
+        </div>
+
+        <div class="btn-toolbar" role="toolbar">
+            <div class="btn-group">
+                <button type="button" class="btn btn-default">Button1</button>
+                <button type="button" class="btn btn-default">Button2</button>
+                <button type="button" class="btn btn-default">Button2</button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-default">Button1</button>
+                <button type="button" class="btn btn-default">Button2</button>
+                <button type="button" class="btn btn-default">Button2</button>
+            </div>
+        </div>
+
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-default">Button1</button>
+            <button type="button" class="btn btn-default">Button2</button>
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle"
+                        data-toggle="dropdown">
+                    下列
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">下拉链接 1</a></li>
+                    <li><a href="#">下拉链接 2</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="btn-group-vertical">
+            <button type="button" class="btn btn-default">Button1</button>
+            <button type="button" class="btn btn-default">Button2</button>
+            <button type="button" class="btn btn-default">Button2</button>
+        </div>
+        <div class="btn-group-vertical">
+            <button type="button" class="btn btn-default">Button1</button>
+            <button type="button" class="btn btn-default">Button2</button>
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle"
+                        data-toggle="dropdown">
+                    下列
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">下拉链接 1</a></li>
+                    <li><a href="#">下拉链接 2</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="btn-group-vertical">
+            <button type="button" class="btn btn-default">Button1</button>
+            <button type="button" class="btn btn-default">Button2</button>
+        </div>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-default btn-lg">下拉大</button>
+            <button type="button" class="btn btn-default dropdown-toggle btn-lg"
+                    data-toggle="dropdown">
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#">下拉链接 1</a></li>
+                <li><a href="#">下拉链接 2</a></li>
+            </ul>
+        </div>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-default">下列</button>
+            <div class="btn-group dropup">
+                <button type="button" class="btn btn-default dropdown-toggle"
+                        data-toggle="dropdown">
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">下拉链接 1</a></li>
+                    <li><a href="#">下拉链接 2</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-default btn-sm">下拉中</button>
+            <button type="button" class="btn btn-default dropdown-toggle btn-sm"
+                    data-toggle="dropdown">
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#">下拉链接 1</a></li>
+                <li><a href="#">下拉链接 2</a></li>
+            </ul>
+        </div>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-default btn-xs">下拉小</button>
+            <button type="button" class="btn btn-default dropdown-toggle btn-xs"
+                    data-toggle="dropdown">
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#">下拉链接 1</a></li>
+                <li><a href="#">下拉链接 2</a></li>
+            </ul>
+        </div>
+
+        <div class="btn-group btn-group-lg">
+            <button type="button" class="btn btn-default">Button1</button>
+            <button type="button" class="btn btn-default">Button2</button>
+            <button type="button" class="btn btn-default">Button2</button>
+        </div>
+        <div class="btn-group btn-group-sm">
+            <button type="button" class="btn btn-default">Button1</button>
+            <button type="button" class="btn btn-default">Button2</button>
+            <button type="button" class="btn btn-default">Button2</button>
+        </div>
+        <div class="btn-group btn-group-xs">
+            <button type="button" class="btn btn-default">Button1</button>
+            <button type="button" class="btn btn-default">Button2</button>
+            <button type="button" class="btn btn-default">Button2</button>
+        </div>
+
+
+    </div>
+
+</body>
+</html>

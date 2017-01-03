@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>过渡效果</title>
+
+    <style>
+        #mydiv{
+            width:100px;
+            height:100px;
+            background: red;
+            transition: width 2s;
+            -moz-transition:width 2s;
+            -webkit-transition:width 2s;
+            -o-transition:width 2s;
+            -ms-transition:width 2s;
+        }
+        #mydiv:hover{
+            width:400px;
+        }
+
+    </style>
+</head>
+
+<!--
+
+    注：document.getElementById("mydiv").addEventListener("transitionend",function(e){
+            this.innerHTML="过渡事件触发——过渡已完成！";
+        })
+
+-->
+
+<body>
+    <div id="mydiv">
+
+    </div>
+
+    <script>
+        document.getElementById("mydiv").addEventListener("transitionend",function(e){
+            this.innerHTML="过渡事件触发——过渡已完成！";
+        })
+
+    </script>
+</body>
+</html>

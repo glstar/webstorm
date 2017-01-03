@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" >
+    <title>导航元素</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+</head>
+
+<!--
+
+    注：
+        a.外层：      1.标签式                  .nav .nav-tabs                                              ul
+                      2.胶囊式                  .nav .nav-pills
+                      3.垂直        胶囊式      .nav .nav-pills .nav-stacked
+                      4.两端对齐    1)标签式    .nav .nav-tabs  .nav-justified
+                                    2)胶囊式    .nav .nav-pills .nav-justified
+        b.中层：      1.激活                    .active                                                     li
+                      2.禁用                    .disabled(改外观,不改功能??)
+                      3.下拉菜单                .dropdown
+
+        c.内层        1.普通                                                                                a
+                      2.下拉菜单                .dropdown-toggle          data-toggle="dropdown" href="#"   a
+                                                    .caret                                                  span
+                                                .dropdown-menu                                              ul
+                                                     ...                                                    li
+                                                        ...                                                 a
+
+
+
+
+        d.事件实现    click、mouseover等
+                      eg.
+                            $("#mytab a").mouseover(function(e){
+                                $(this).tab("show");
+                            })
+
+
+-->
+
+<body>
+
+    <div class="container">
+
+
+        <p>带有下拉菜单的胶囊</p>
+        <ul class="nav nav-pills">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">SVN</a></li>
+            <li><a href="#">iOS</a></li>
+            <li><a href="#">VB.Net</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    Java <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Swing</a></li>
+                    <li><a href="#">jMeter</a></li>
+                    <li><a href="#">EJB</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">分离的链接</a></li>
+                </ul>
+            </li>
+            <li><a href="#">PHP</a></li>
+        </ul>
+
+        <p>带有下拉菜单的标签</p>
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">SVN</a></li>
+            <li><a href="#">iOS</a></li>
+            <li><a href="#">VB.Net</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    Java <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Swing</a></li>
+                    <li><a href="#">jMeter</a></li>
+                    <li><a href="#">EJB</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">分离的链接</a></li>
+                </ul>
+            </li>
+            <li><a href="#">PHP</a></li>
+        </ul>
+
+        <p>基本的胶囊式导航菜单</p>
+        <ul class="nav nav-pills nav-justified">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">SVN</a></li>
+            <li><a href="#">iOS</a></li>
+            <li class="disabled"><a href="#">VB.Net</a></li>
+            <li><a href="#">Java</a></li>
+            <li><a href="#">PHP</a></li>
+        </ul>
+
+        <br>
+
+        <p>标签式的导航菜单</p>
+        <ul class="nav nav-tabs nav-justified">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">SVN</a></li>
+            <li><a href="#">iOS</a></li>
+            <li class="disabled"><a href="#">VB.Net</a></li>
+            <li class="disabled"><a href="#">Java</a></li>
+            <li><a href="#">PHP</a></li>
+        </ul>
+
+        <br>
+
+        <p>标签式的导航菜单</p>
+        <ul class="nav nav-pills nav-stacked">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">SVN</a></li>
+            <li><a href="#">iOS</a></li>
+            <li class="disabled"><a href="#">VB.Net</a></li>
+            <li><a href="#">Java</a></li>
+            <li><a href="#">PHP</a></li>
+        </ul>
+
+        <br>
+
+        <p>基本的胶囊式导航菜单</p>
+        <ul class="nav nav-pills">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">SVN</a></li>
+            <li><a href="#">iOS</a></li>
+            <li class="disabled"><a href="#">VB.Net</a></li>
+            <li><a href="#">Java</a></li>
+            <li><a href="#">PHP</a></li>
+        </ul>
+
+        <br>
+
+        <p>标签式的导航菜单</p>
+        <ul class="nav nav-tabs" id="mytab">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">SVN</a></li>
+            <li role="presentation"><a href="#">iOS</a></li>
+            <li role="presentation"><a href="#">VB.Net</a></li>
+            <li role="presentation" class="disabled"><a href="#">Java</a></li>
+            <li role="presentation"><a href="#">PHPs</a></li>
+        </ul>
+    </div>
+    <br><br><br>
+
+
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script>
+        $("#mytab a").mouseover(function(e){
+            $(this).tab("show");
+        })
+    </script>
+
+</body>
+</html>

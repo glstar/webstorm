@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>工具提示</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+</head>
+
+<!--
+
+注1：CSS
+        整体                              .                               data-toggle="tooltip" title="默认标题"        a|button
+
+-->
+
+<body>
+
+    <div class="container">
+
+        <h4>工具提示（Tooltip）插件 - 锚</h4>
+        这是一个 <a href="#" class="tooltip-test" data-toggle="tooltip"
+                title="默认的 Tooltip">
+        默认的 Tooltip
+    </a>.
+        这是一个 <a href="#" class="tooltip-test" data-toggle="tooltip"
+                data-placement="left" title="左侧的 Tooltip">
+        左侧的 Tooltip
+    </a>.
+        这是一个 <a href="#" data-toggle="tooltip" data-placement="top"
+                title="顶部的 Tooltip">
+        顶部的 Tooltip
+    </a>.
+        这是一个 <a href="#" data-toggle="tooltip" data-placement="bottom"
+                title="底部的 Tooltip">
+        底部的 Tooltip
+    </a>.
+        这是一个 <a href="#" data-toggle="tooltip" data-placement="right"
+                title="右侧的 Tooltip">
+        右侧的 Tooltip
+    </a>
+
+        <br>
+
+        <h4>工具提示（Tooltip）插件 - 按钮</h4>
+        <button type="button" class="btn btn-default" data-toggle="tooltip"
+                title="默认的 Tooltip">
+            默认的 Tooltip
+        </button>
+        <button type="button" class="btn btn-default" data-toggle="tooltip"
+                data-placement="left" title="左侧的 Tooltip">
+            左侧的 Tooltip
+        </button>
+        <button type="button" class="btn btn-default" data-toggle="tooltip"
+                data-placement="top" title="顶部的 Tooltip">
+            顶部的 Tooltip
+        </button>
+        <button type="button" class="btn btn-default" data-toggle="tooltip"
+                data-placement="bottom" title="底部的 Tooltip">
+            底部的 Tooltip
+        </button>
+        <button type="button" class="btn btn-default" data-toggle="tooltip"
+                data-placement="right" title="右侧的 Tooltip">
+            右侧的 Tooltip
+        </button>
+
+        这是一个 <a href="#" class="tooltip-show" data-toggle="tooltip"
+                title="show">Tooltip 方法 show
+    </a>.
+
+        这是一个 <a href="#" class="tooltip-hide" data-toggle="tooltip" data-animation="false"
+                data-placement="left" title="hide">Tooltip 方法 hide
+    </a>.
+
+        这是一个 <a href="#" class="tooltip-destroy" data-toggle="tooltip"
+                data-placement="top" title="destroy">Tooltip 方法 destroy
+    </a>.
+
+        这是一个 <a href="#" class="tooltip-toggle" data-toggle="tooltip"
+                data-placement="bottom" title="toggle">Tooltip 方法 toggle
+    </a>.
+        <br><br><br><br><br><br>
+        <p class="tooltip-options" >
+            这是一个 <a href="#" data-toggle="tooltip" title="<h2>'am Header2
+         </h2>">Tooltip 方法 options
+        </a>.
+        </p>
+
+
+
+        <h4>工具提示（Tooltip）插件 - 锚</h4>
+        这是一个 <a href="#" class="tooltip-show" data-toggle="tooltip"
+                title="" data-title="data-title" data-original-title="">默认的 Tooltip
+    </a>.
+        <br><br><br><br>
+        <h4>工具提示（Tooltip）插件 - 锚</h4>
+        这是一个
+        <a href="#" data-toggle="tooltip"
+                title="" data-title="<b>data-title</b>" data-original-title=""
+                data-animation="false"
+                data-html="true"
+                data-trigger="hover"
+                data-delay="200"
+                data-template='<div class="tooltip" role="tooltip">
+                                    <div class="tooltip-inner"></div>
+                                </div>'
+        >Tooltip
+        </a>.
+
+        <br><br><br>
+
+        <a href="#" class="mya" data-toggle="tooltip" title="title" rel="tooltip">默认的 Tooltip</a>
+        <a href="#" class="mya" data-toggle="tooltip" title="title">默认的 Tooltip</a>
+
+        <div class="mydiv">
+            <a href="#" class="mya" data-toggle="tooltip" title="title" rel="tooltip">默认的 Tooltip</a>
+            <a href="#" class="mya" data-toggle="tooltip" title="title">默认的 Tooltip</a>
+        </div>
+
+        <br><br><br>
+
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-default mybtn" data-toggle="tooltip" title="titletitletitletitletitletitletitletitletitle">左</button>
+            <button type="button" class="btn btn-default mybtn" data-toggle="tooltip" title="titletitletitletitletitletitletitletitletitle">中</button>
+            <button type="button" class="btn btn-default mybtn" data-toggle="tooltip" title="titletitletitletitletitletitletitletitletitle">右</button>
+        </div>
+
+
+        <div>
+
+
+
+    <script>
+
+
+/*注2：JS*/
+
+        //~与其他插件不同，必须使用jquery激活
+            //$(function () { $("[data-toggle='tooltip']").tooltip(); });
+
+        /*a.data: 加在button|a标签内
+            1)data-animation    true    //有淡入淡出效果
+                                false   //无淡入淡出效果
+            2)data-html         false   //提示内容不支持html
+                                true    //提示内容  支持html
+            3)data-placement    top     //上
+                                bottom
+                                left
+                                right
+                                auto    //根据实际位置显示，默认上
+            4)data~title        title   //优先级最高
+                                data-original-title//优先级剧中
+                                data-title//优先级最低
+            5)data-trigger      hover   //鼠标悬停
+                                focus   //得到焦点,也是默认
+                                click   //鼠标点击
+                                manual  //手动
+            6)data-delay        n       //默认0，单位毫秒，显示关闭都是n秒
+            7)data-template     '<div class="tooltip" role="tooltip">       //整块为默认值
+                                    <div class="tooltip-arrow"></div>       ////向下箭头图标
+                                    <div class="tooltip-inner"></div>       ////提示的文字内容将写入该标签内
+                                </div>'
+                                <b>123</b>     //例如赋值<b>123</b>将替换上面整块默认值。[???光赋值123还无法显示]
+        */
+
+
+        //b.参数
+            //1)普通参数animation、html、placement、title、trigger、delay、template等
+            $("[data-toggle='tooltip']").tooltip({//不能放在$(function(){})里面
+                delay: {
+                    show: 100,
+                    hide: 100
+                },
+                placement:'top' //记得引号，其他的data属性在此js里写法类似
+            });
+            //2)selector:必须注释掉~与b.1后才可实现
+            $(".mya").tooltip({//使用本标签无效
+                selector:'a[rel=tooltip]'
+            });
+            $(".mydiv").tooltip({//使用父标签有效
+                selector:'a[rel=tooltip]'
+            });
+            //3)container:必须注释掉~后才可实现
+            $(".mybtn").tooltip({
+                container:'body'//不写此代码，工具提示时边框将变宽变窄
+            });
+
+        //c.方法
+            $(function () { $('.tooltip-show').tooltip('show');});
+            $(function () { $('.tooltip-hide').tooltip('hide');});
+            $(function () { $('.tooltip-destroy').tooltip('destroy');});
+            $(function () { $('.tooltip-toggle').tooltip('toggle');});
+
+
+
+        //d.事件
+            $(function () { $('.tooltip-show').on('show.bs.tooltip', function () {
+                alert("Alert message on show");
+            })});
+            $(function () { $('.tooltip-shown').on('shown.bs.tooltip', function () {
+                alert("Alert message on shown");
+            })});
+            $(function () { $('.tooltip-hide').on('hide.bs.tooltip', function () {
+                alert("Alert message on hide");
+            })});
+            $(function () { $('.tooltip-hidden').on('hidden.bs.tooltip', function () {
+                alert("Alert message on hidden");
+            })});
+    </script>
+</body>
+</html>

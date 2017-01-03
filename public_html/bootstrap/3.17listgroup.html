@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>列表组</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+</head>
+
+<!--
+
+    注：
+        a.ul、li式    外层                      .list-group                  ul
+                      中层                      .list-group-item             li
+                      内层        徽章          .badge                       span置于内容之前
+        b.div、a式    外层                      .list-group                  div
+                      中层                      .list-group-item             a
+                                  情景：.list-group-item之后加
+                                                .list-group-item-danger      a
+                                                .list-group-item-info        a
+                                                .list-group-item-warning     a
+                                                .list-group-item-success     a
+                                  选中：.list-group-item之后加.active        a
+                                  禁用：.list-group-item之后加.disable       a
+                      内层
+                      1)同上      徽章          .badge                       span置于内容之前
+                      2)定制                    .list-group-item-heading     h4
+                                                .list-group-item-text        p
+                                                还可以放图片等
+
+
+-->
+
+<body>
+
+    <div class="container">
+        <ul class="list-group">
+            <li class="list-group-item"><span class="badge">2</span>免费域名注册</li>
+            <li class="list-group-item">免费 Window 空间托管</li>
+            <li class="list-group-item">图像的数量</li>
+            <li class="list-group-item"><span class="badge">21</span>24*7 支持</li>
+            <li class="list-group-item">每年更新成本</li>
+        </ul>
+
+        <div class="list-group">
+            <a href="#" class="list-group-item active">
+                <span class="badge">12</span>免费域名注册
+            </a>
+            <a href="#" class="list-group-item">24*7 支持</a>
+            <a href="#" class="list-group-item"><span class="badge">24</span>免费 Window 空间托管</a>
+            <a href="#" class="list-group-item disabled">图像的数量</a>
+            <a href="#" class="list-group-item">每年更新成本</a>
+        </div>
+
+
+        <div class="list-group">
+            <a href="#" class="list-group-item active">
+                <h4 class="list-group-item-heading">
+                    入门网站包
+                </h4>
+            </a>
+            <a href="#" class="list-group-item list-group-item-danger">
+                <h4 class="list-group-item-heading">
+                    免费域名注册
+                </h4>
+                <p class="list-group-item-text">
+                    您将通过网页进行免费域名注册。
+                </p>
+            </a>
+            <a href="#" class="list-group-item list-group-item-info">
+                <h4 class="list-group-item-heading">
+                    24*7 支持
+                </h4>
+                <p class="list-group-item-text">
+                    我们提供 24*7 支持。
+                </p>
+            </a>
+        </div>
+        <div class="list-group">
+            <a href="#" class="list-group-item active">
+                <h4 class="list-group-item-heading">
+                    商务网站包
+                </h4>
+            </a>
+            <a href="#" class="list-group-item list-group-item-success">
+                <h4 class="list-group-item-heading">
+                    免费域名注册
+                </h4>
+                <p class="list-group-item-text">
+                    您将通过网页进行免费域名注册。
+                </p>
+            </a>
+            <a href="#" class="list-group-item list-group-item-warning">
+                <h4 class="list-group-item-heading">24*7 支持</h4>
+                <p class="list-group-item-text">我们提供 24*7 支持。</p>
+            </a>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
